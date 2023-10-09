@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float speed;
     [SerializeField] private float jump_speed;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -28,14 +29,38 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(dir_x * speed, rb.velocity.y);
 
         // jump
-        if (Input.GetButtonDown("Jump") && isGrounded())
+        if (Input.GetButtonDown("Jump"))
         {
-            rb.velocity = new Vector2(rb.velocity.x, jump_speed);
+            if(isGrounded())
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jump_speed);
+                Debug.Log("Grounded !");
+            }
+            else if(isSlidingLeft())
+            {
+                rb.velocity = new Vector2(jump_speed, jump_speed);
+                Debug.Log("Sliding Left !");
+            }
+            else if (isSlidingRight())
+            {
+                rb.velocity = new Vector2(-jump_speed, jump_speed);
+                Debug.Log("Sliding Right !");
+            }
         }
     }
 
     private bool isGrounded()
     {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0, Vector2.down, 1, jumpable_ground);
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0, Vector2.down, 0.01f, jumpable_ground);
+    }
+
+    private bool isSlidingRight()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0, Vector2.right, 0.01f, jumpable_ground);
+    }
+
+    private bool isSlidingLeft()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0, Vector2.left, 0.01f, jumpable_ground);
     }
 }

@@ -43,6 +43,9 @@ public class DungeonGenerator
         {
             rooms.Add(current_space);    // only added if different from other elements
 
+            // Determine probability of each direction
+
+
             // randomly walk to a neighboring space
             int dir = Random.Range(0, 2);               // axis selection
             int sign = Random.Range(0, 2) * 2 - 1;      // direction along the axis (-1 or 1)
