@@ -10,16 +10,16 @@ public class test_mapgen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        List<Vector2> rooms = DungeonGenerator.GenRandomWalk(size);
+        List<Room> rooms = DungeonGenerator.GenRandomWalk(size);
         List<GameObject> squares = new List<GameObject>();
 
-        foreach(Vector2 room_coords in rooms)
+        foreach(Room r in rooms)
         {
             GameObject p = GameObject.CreatePrimitive(PrimitiveType.Cube);
            
             p.transform.localScale = scale * Vector3.one;
             p.transform.parent = gameObject.transform;
-            p.transform.position = gameObject.transform.position + new Vector3(room_coords.x, room_coords.y, 0) * scale;
+            p.transform.position = gameObject.transform.position + new Vector3(r.position.x, r.position.y, 0) * scale;
 
             squares.Add(p);
         }

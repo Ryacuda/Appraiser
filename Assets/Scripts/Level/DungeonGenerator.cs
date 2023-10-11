@@ -30,35 +30,56 @@ public class DungeonGenerator
      * int number_of_rooms : the number of rooms desired in the layout
      * 
      * Returns:
-     * List<Vector2> : the coordinates of every room in the layout (no duplicates)
+     * List<Room> : a list of Room
      */
-    public static List<Vector2> GenRandomWalk(int number_of_rooms)
+    public static List<Room> GenRandomWalk(int number_of_rooms)
     {
-        // layout is represented using the coordinates of the rooms composing it.
-        HashSet<Vector2> rooms = new HashSet<Vector2>();
+        // room list, openings updated later
+        HashSet<Room> rooms = new HashSet<Room>();
 
-        Vector2 current_space = new Vector2(0, 0);       // initial room, to expand from
+        // starting point
+        Vector2Int p = new Vector2Int(0,0);
 
-        while(rooms.Count() < number_of_rooms)
+        // add the desired number of rooms to the layout
+        while (rooms.Count < number_of_rooms)
         {
-            rooms.Add(current_space);    // only added if different from other elements
+            Room r = new Room();
+            r.position = p;
+            rooms.Add(r);
 
             // Determine probability of each direction
+            p = RandomMovement(p);
+        }
 
-
-            // randomly walk to a neighboring space
-            int dir = Random.Range(0, 2);               // axis selection
-            int sign = Random.Range(0, 2) * 2 - 1;      // direction along the axis (-1 or 1)
-            if(dir == 0 )
+        // update openings
+        foreach(Room r1 in rooms) 
+        {
+            foreach (Room r2 in rooms)
             {
-                current_space += new Vector2(sign, 0);
-            }
-            else
-            {
-                current_space += new Vector2(0, sign);
+                if(r1.position != r2.position)
+                {
+                    r1.openings = r1.openings | r1.isNeighbour(r2);
+                }
             }
         }
 
         return rooms.ToList();      // returns an ordered list
     }
+
+
+    static private Vector2Int RandomMovement(in Vector2Int p)
+    {
+        List<Vector2Int> p_candidates = new List<Vector2Int>();
+
+        for(int dx = -1; dx <= 1; dx++)            // {-1, 1}
+        {
+            for (int dy = -1; dy <= 1; dy++)       // {-1, 1}
+            {
+                 p_candidates.Add(p + new Vector2Int(dx, dy));
+            }
+        }
+
+        return p_candidates[Random.Range(0,p_candidates.Count)];
+    }
+
 }
