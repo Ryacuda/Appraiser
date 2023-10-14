@@ -47,7 +47,7 @@ public class DungeonGenerator
 			rooms_positions.Add(p);
 
 			// Determine probability of each direction
-			p = RandomMovementNoBacktrack(rooms_positions ,p);
+			p = WeightedRandomWalk(rooms_positions ,p);
         }
 
 		List<Room> rooms = new List<Room>();
@@ -73,26 +73,17 @@ public class DungeonGenerator
 		return rooms.ToList();      // returns an ordered list
 	}
 
-
-	static private Vector2Int RandomMovement(in Vector2Int p)
-	{
-		List<Vector2Int> p_candidates = new List<Vector2Int> 
-		{	new Vector2Int(-1, 0),
-			new Vector2Int(1, 0),
-			new Vector2Int(0, -1),
-			new Vector2Int(0, 1) };
-
-		// return a random candidate
-		return p + p_candidates[Random.Range(0,p_candidates.Count)];
-	}
-
+	// unused
 	static private Vector2Int RandomMovementNoBacktrack(in HashSet<Vector2Int> rooms_pos, in Vector2Int p)
 	{
         List<Vector2Int> p_candidates = new List<Vector2Int>
-        {   new Vector2Int(-1, 0),
-            new Vector2Int(1, 0),
-            new Vector2Int(0, -1),
-            new Vector2Int(0, 1) };
+        {   p + new Vector2Int(-1, 0),
+            p + new Vector2Int(1, 0),
+            p + new Vector2Int(0, -1),
+            p + new Vector2Int(0, 1) };
+
+		List<Vector2Int> tmp = new List<Vector2Int>(rooms_pos.ToList());
+        p_candidates = p_candidates.Where(r => !tmp.Contains(r)).ToList();
 
         if (p_candidates.Count == 0)
 		{       // if there's no candidates (i.e adjacent rooms already added), chose a random direction
@@ -110,7 +101,79 @@ public class DungeonGenerator
 		}
 		
 		// return a random candidate
-		return p + p_candidates[Random.Range(0, p_candidates.Count)];
+		return p_candidates[Random.Range(0, p_candidates.Count)];
 	}
 
+    static private Vector2Int WeightedRandomWalk(in HashSet<Vector2Int> rooms_pos, in Vector2Int p)
+    {
+        List<Vector2Int> p_candidates = new List<Vector2Int>
+        {   p + new Vector2Int(-1, 0),
+            p + new Vector2Int(1, 0),
+            p + new Vector2Int(0, -1),
+            p + new Vector2Int(0, 1) };
+
+        List<Vector2Int> tmp = new List<Vector2Int>(rooms_pos.ToList());
+        p_candidates = p_candidates.Where(r => !tmp.Contains(r)).ToList();
+		
+		List<int> weights = new List<int>();
+		int weightsum = 0;
+
+		for(int i = 0; i < p_candidates.Count; i++)
+		{
+			int w = 4 - CountNeigbours(rooms_pos, p_candidates[i]);		// the weight is the number of empty (non-neighbour) tiles
+
+            weights.Add(w);
+			weightsum += w;
+		}
+
+
+        if (p_candidates.Count == 0)
+        {       // if there's no candidates (i.e adjacent rooms already added), chose a random direction
+            int dir = Random.Range(0, 2);           // 0 for x, 1 for y
+            int val = Random.Range(0, 2) * 2 - 1;   // -1 or 1
+
+            if (dir == 0)
+            {
+                return p + new Vector2Int(val, 0);
+            }
+            else
+            {
+                return p + new Vector2Int(0, val);
+            }
+        }
+
+		// return a random candidate
+		int ind_w = Random.Range(0, weightsum);
+		weightsum = 0;
+        for(int i = 0; i < weights.Count; i++)
+		{
+            weightsum += weights[i];
+			if(ind_w < weightsum)
+			{
+				return p_candidates[i];
+			}
+		}
+
+		return p_candidates.Last();
+    }
+
+	static private int CountNeigbours(in HashSet<Vector2Int> rooms_pos, in Vector2Int p)
+	{
+        List<Vector2Int> neigboring_tiles = new List<Vector2Int>
+        {   p + new Vector2Int(-1, 0),
+            p + new Vector2Int(1, 0),
+            p + new Vector2Int(0, -1),
+            p + new Vector2Int(0, 1) };
+
+		int count = 0;
+		for(int i = 0; i < neigboring_tiles.Count; i++)
+		{
+			if (rooms_pos.Contains(neigboring_tiles[i]))
+			{
+				count++;
+			}
+		}
+
+		return count;
+    }
 }

@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scale: 0.2
-  size: 15
+  size: 8
 --- !u!1 &802869671
 GameObject:
   m_ObjectHideFlags: 0
