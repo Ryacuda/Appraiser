@@ -34,17 +34,17 @@ public class PlayerMovement : MonoBehaviour
             if(isGrounded())
             {
                 rb.velocity = new Vector2(rb.velocity.x, jump_speed);
-                Debug.Log("Grounded !");
+                //Debug.Log("Grounded !");
             }
             else if(isSlidingLeft())
             {
                 rb.velocity = new Vector2(jump_speed, jump_speed);
-                Debug.Log("Sliding Left !");
+                //Debug.Log("Sliding Left !");
             }
             else if (isSlidingRight())
             {
                 rb.velocity = new Vector2(-jump_speed, jump_speed);
-                Debug.Log("Sliding Right !");
+                //Debug.Log("Sliding Right !");
             }
         }
     }
