@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 3440
     height: 1357
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 739
     height: 1307
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -356,7 +356,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Effect
+    - Assets/Sprites/player
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -364,16 +364,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Effect
+  - Assets/Sprites/player
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\luenee\Documents\GitHub\Appraiser
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 086e0000
-    m_LastClickedID: 28168
-    m_ExpandedIDs: 000000001c620000da62000000ca9a3bffffff7f
+    m_SelectedIDs: 78250000
+    m_LastClickedID: 9592
+    m_ExpandedIDs: 000000003a6200004c6200004e6200005a6200009262000094620000966200009862000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -401,7 +401,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001c620000
+    m_ExpandedIDs: 000000003a620000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -429,7 +429,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000389d0000ec640000
+    m_ExpandedInstanceIDs: c6230000389d0000ec640000ea610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -541,9 +541,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 44610000
-      m_LastClickedID: 24900
-      m_ExpandedIDs: 1afbffff68610000
+      m_SelectedIDs: 52610000
+      m_LastClickedID: 24914
+      m_ExpandedIDs: fafaffff52610000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -936,9 +936,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 4.7007613, y: -14.56914, z: 0.77936524}
+    m_Target: {x: -1.5175982, y: -3.252431, z: -6.1815977}
     speed: 2
-    m_Value: {x: 4.7007613, y: -14.56914, z: 0.77936524}
+    m_Value: {x: -1.5175982, y: -3.252431, z: -6.1815977}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -986,11 +986,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0, w: 1}
+    m_Value: {x: -0.0000000010645048, y: 0.00000008746096, z: -0.00000001163993, w: -0.99999994}
   m_Size:
-    m_Target: 5.746592
+    m_Target: 5.2896385
     speed: 2
-    m_Value: 5.746592
+    m_Value: 5.061855
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1008,7 +1008,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: -0.012014687, y: 0.9871408, z: -0.13137576, w: -0.09027668}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
