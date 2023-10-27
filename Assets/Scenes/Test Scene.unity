@@ -485,11 +485,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02eeaef5d8122c34da3623696037e81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jump_input_buffer: 0.3
   jumpable_ground:
     serializedVersion: 2
     m_Bits: 64
-  speed: 0
-  jump_speed: 0
+  max_speed: 10
+  jump_speed: 20
 --- !u!61 &886207573
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -4,63 +4,89 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private BoxCollider2D coll;
+	private Rigidbody2D instance_rigidbody;
+	private BoxCollider2D instance_collider;
+	private float horizontal_direction;     // -1 or 1 along x
+	private float timestamp_jump;
+	private bool grounded;
+	private bool sliding_right;
+	private bool sliding_left;
 
-    [SerializeField] private LayerMask jumpable_ground;
+	[SerializeField] private float jump_input_buffer;
+	[SerializeField] private LayerMask jumpable_ground;
+	[SerializeField] private float max_speed;
+	[SerializeField] private float jump_speed;
 
-    [SerializeField] private float speed;
-    [SerializeField] private float jump_speed;
+	// Start is called before the first frame update
+	private void Start()
+	{
+		instance_rigidbody = GetComponent<Rigidbody2D>();
+		instance_collider = GetComponent<BoxCollider2D>();
 
-    // Start is called before the first frame update
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        coll = GetComponent<BoxCollider2D>();
-        speed = 7;
-        jump_speed = 17;
-    }
+		timestamp_jump = -100;
 
-    // Update is called once per frame
-    private void Update()
-    {
-        // left - right
-        float dir_x = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dir_x * speed, rb.velocity.y);
+		horizontal_direction = 0;
+	}
 
-        // jump
-        if (Input.GetButtonDown("Jump"))
-        {
-            if(isGrounded())
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jump_speed);
-                //Debug.Log("Grounded !");
-            }
-            else if(isSlidingLeft())
-            {
-                rb.velocity = new Vector2(jump_speed, jump_speed);
-                //Debug.Log("Sliding Left !");
-            }
-            else if (isSlidingRight())
-            {
-                rb.velocity = new Vector2(-jump_speed, jump_speed);
-                //Debug.Log("Sliding Right !");
-            }
-        }
-    }
+	// Update is called once per frame
+	private void Update()
+	{
+		horizontal_direction = Input.GetAxisRaw("Horizontal");
 
-    private bool isGrounded()
-    {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0, Vector2.down, 0.01f, jumpable_ground);
-    }
+		if(Input.GetButtonDown("Jump"))
+		{
+			timestamp_jump = Time.time;
+		}
+	}
 
-    private bool isSlidingRight()
-    {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0, Vector2.right, 0.01f, jumpable_ground);
-    }
+	private void FixedUpdate()
+	{
+		UpdateGrounded();
 
-    private bool isSlidingLeft()
-    {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0, Vector2.left, 0.01f, jumpable_ground);
-    }
+
+		movement();
+		jump();
+	}
+
+	private void movement()
+	{
+		if(grounded)
+		{
+			instance_rigidbody.velocity = new Vector2(max_speed * horizontal_direction, instance_rigidbody.velocity.y);
+		}
+		else
+		{
+			float new_x_speed = Mathf.Clamp(instance_rigidbody.velocity.x + horizontal_direction * max_speed / 5, -max_speed, max_speed);
+
+			instance_rigidbody.velocity = new Vector2(new_x_speed, instance_rigidbody.velocity.y);
+		}
+	}
+
+	private void jump()
+	{
+		if(Time.time - timestamp_jump < jump_input_buffer)
+		{
+			timestamp_jump = -100;  // consume input in order to prevent jumping twice in some cases
+
+			if (grounded || (sliding_left && sliding_right))
+			{
+				instance_rigidbody.velocity = new Vector2(instance_rigidbody.velocity.x, jump_speed);
+			}
+			else if(sliding_right)
+			{
+				instance_rigidbody.velocity = new Vector2(-max_speed, jump_speed);
+			}
+			else if(sliding_left)
+			{
+				instance_rigidbody.velocity = new Vector2(max_speed, jump_speed);
+			}
+		}
+	}
+
+	private void UpdateGrounded()
+	{
+		grounded = Physics2D.BoxCast(instance_collider.bounds.center, instance_collider.bounds.size, 0, Vector2.down, 0.08f, jumpable_ground);
+		sliding_right = Physics2D.BoxCast(instance_collider.bounds.center, instance_collider.bounds.size, 0, Vector2.right, 0.08f, jumpable_ground);
+		sliding_left = Physics2D.BoxCast(instance_collider.bounds.center, instance_collider.bounds.size, 0, Vector2.left, 0.08f, jumpable_ground);
+	}
 }
