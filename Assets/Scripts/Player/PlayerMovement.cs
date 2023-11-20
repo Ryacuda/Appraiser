@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 	private bool grounded;
 	private bool sliding_right;
 	private bool sliding_left;
+	private uint jump_charges;
 
 	[SerializeField] private float jump_input_buffer;
 	[SerializeField] private LayerMask jumpable_ground;
@@ -43,12 +44,11 @@ public class PlayerMovement : MonoBehaviour
 	{
 		UpdateGrounded();
 
-
-		movement();
-		jump();
+		Movement();
+		Jump();
 	}
 
-	private void movement()
+	private void Movement()
 	{
 		if(grounded)
 		{
@@ -62,13 +62,18 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	private void jump()
+	private void Jump()
 	{
 		if(Time.time - timestamp_jump < jump_input_buffer)
 		{
 			timestamp_jump = -100;  // consume input in order to prevent jumping twice in some cases
 
-			if (grounded || (sliding_left && sliding_right))
+			if (jump_charges > 0)
+			{
+				instance_rigidbody.velocity = new Vector2(instance_rigidbody.velocity.x, jump_speed);
+				jump_charges--;
+			}
+			else if (sliding_left && sliding_right)
 			{
 				instance_rigidbody.velocity = new Vector2(instance_rigidbody.velocity.x, jump_speed);
 			}
@@ -86,6 +91,11 @@ public class PlayerMovement : MonoBehaviour
 	private void UpdateGrounded()
 	{
 		grounded = Physics2D.BoxCast(instance_collider.bounds.center, instance_collider.bounds.size, 0, Vector2.down, 0.08f, jumpable_ground);
+		if(grounded)
+		{
+			jump_charges = 2;
+		}
+
 		sliding_right = Physics2D.BoxCast(instance_collider.bounds.center, instance_collider.bounds.size, 0, Vector2.right, 0.08f, jumpable_ground);
 		sliding_left = Physics2D.BoxCast(instance_collider.bounds.center, instance_collider.bounds.size, 0, Vector2.left, 0.08f, jumpable_ground);
 	}
