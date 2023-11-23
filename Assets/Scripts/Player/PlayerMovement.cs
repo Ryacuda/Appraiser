@@ -7,22 +7,27 @@ public class PlayerMovement : MonoBehaviour
 	private Rigidbody2D instance_rigidbody;
 	private BoxCollider2D instance_collider;
 	private float horizontal_direction;     // -1 or 1 along x
+	private Vector2 hook_throw_direction;
+	private bool hook = false;
 	private float timestamp_jump;
 	private bool grounded;
 	private bool sliding_right;
 	private bool sliding_left;
 	private uint jump_charges;
+	private Camera camera_instance;
 
 	[SerializeField] private float jump_input_buffer;
 	[SerializeField] private LayerMask jumpable_ground;
 	[SerializeField] private float max_speed;
 	[SerializeField] private float jump_speed;
+	[SerializeField] private float hook_range;
 
 	// Start is called before the first frame update
 	private void Start()
 	{
 		instance_rigidbody = GetComponent<Rigidbody2D>();
 		instance_collider = GetComponent<BoxCollider2D>();
+		camera_instance = gameObject.GetComponentInChildren<Camera>();
 
 		timestamp_jump = -100;
 
@@ -38,6 +43,15 @@ public class PlayerMovement : MonoBehaviour
 		{
 			timestamp_jump = Time.time;
 		}
+
+		if(Input.GetKeyDown(KeyCode.E))
+		{
+			hook_throw_direction = camera_instance.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+
+			hook_throw_direction.Normalize();
+
+			hook = true;
+		}
 	}
 
 	private void FixedUpdate()
@@ -46,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
 
 		Movement();
 		Jump();
+		ThrowHook();
 	}
 
 	private void Movement()
@@ -86,6 +101,26 @@ public class PlayerMovement : MonoBehaviour
 				instance_rigidbody.velocity = new Vector2(max_speed, jump_speed);
 			}
 		}
+	}
+
+	private void ThrowHook()
+	{
+		if(hook)
+		{
+			RaycastHit2D hit = Physics2D.Raycast(transform.position, hook_throw_direction, hook_range);
+
+			if (hit.collider != null)
+			{
+				Debug.DrawLine(transform.position, hit.point);
+			}
+			else
+			{
+				Debug.DrawLine(transform.position, transform.position + new Vector3(hook_throw_direction.x, hook_throw_direction.y) * hook_range);
+			}
+		}
+
+		// consume input
+		hook = false;
 	}
 
 	private void UpdateGrounded()
