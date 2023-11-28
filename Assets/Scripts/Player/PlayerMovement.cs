@@ -65,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
 
 		Movement();
 		Jump();
+		ApplyHook();
 	}
 
 	private void Movement()
@@ -104,6 +105,15 @@ public class PlayerMovement : MonoBehaviour
 			{
 				instance_rigidbody.velocity = new Vector2(max_speed, jump_speed);
 			}
+		}
+	}
+
+	private void ApplyHook()
+	{
+		// the pendulum movement is applied only if the hook is anchored
+		if (hook_instance.anchored)
+		{
+			instance_rigidbody.velocity = hook_instance.GetNewSpeed(instance_rigidbody.velocity, transform.position);
 		}
 	}
 

@@ -16,6 +16,7 @@ public class HookBehaviour : MonoBehaviour
 	private Vector2 hook_throw_direction;
 
 	public bool anchored;
+	private float rope_length;
 	private bool is_moving;
 
     // Start is called before the first frame update
@@ -69,10 +70,6 @@ public class HookBehaviour : MonoBehaviour
 			endpoint = playerpos + new Vector3(hook_throw_direction.x, hook_throw_direction.y) * hook_range;
 		}
 
-		//linerenderer_instance.SetPosition(0, playerpos);
-		linerenderer_instance.SetPosition(0, endpoint);
-		spriterenderer_instance.transform.position = endpoint;
-
 		StartCoroutine(HookTravel(playerpos, endpoint, (hit.collider != null)));
 	}
 
@@ -112,5 +109,24 @@ public class HookBehaviour : MonoBehaviour
 		linerenderer_instance.enabled = false;
 		spriterenderer_instance.enabled = false;
 		anchored = false;
+	}
+
+	public Vector2 GetNewSpeed(Vector2 speed, Vector2 playerpos)
+	{
+		if( Vector2.Distance(playerpos + speed, linerenderer_instance.GetPosition(0)) < Vector2.Distance(linerenderer_instance.GetPosition(0), linerenderer_instance.GetPosition(1)) )
+		{
+			return speed;
+		}
+
+		Vector2 dir = Vector2.Perpendicular(new Vector2(linerenderer_instance.GetPosition(0).x, linerenderer_instance.GetPosition(0).y) - playerpos).normalized;
+
+		if(Vector2.Dot(dir, speed)  < 0)
+		{
+			return - speed.magnitude * dir;
+		}
+		else
+		{
+			return speed.magnitude * dir;
+		}
 	}
 }
