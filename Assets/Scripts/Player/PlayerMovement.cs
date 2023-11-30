@@ -5,16 +5,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-	private Rigidbody2D instance_rigidbody;
-	private BoxCollider2D instance_collider;
 	private float horizontal_direction;     // -1 or 1 along x
 	private float timestamp_jump;
 	private bool grounded;
 	private bool sliding_right;
 	private bool sliding_left;
 	private uint jump_charges;
-	private Camera camera_instance;
+
+    private Rigidbody2D instance_rigidbody;
+    private BoxCollider2D instance_collider;
+    private Camera camera_instance;
 	private HookBehaviour hook_instance;
+	private Animator animator;
+	private SpriteRenderer sprite_renderer;
 
 	[SerializeField] private float jump_input_buffer;
 	[SerializeField] private LayerMask jumpable_ground;
@@ -29,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
 		instance_collider = GetComponent<BoxCollider2D>();
 		camera_instance = gameObject.GetComponentInChildren<Camera>();
 		hook_instance = gameObject.GetComponentInChildren<HookBehaviour>();
+		animator = gameObject.GetComponent<Animator>();
+		sprite_renderer = gameObject.GetComponent<SpriteRenderer>();
 
 		hook_instance.transform.parent = null;
 
@@ -73,6 +78,10 @@ public class PlayerMovement : MonoBehaviour
 		if(grounded)
 		{
 			instance_rigidbody.velocity = new Vector2(max_speed * horizontal_direction, instance_rigidbody.velocity.y);
+
+			Flip(instance_rigidbody.velocity.x);
+			float charactere_velocity = Mathf.Abs(instance_rigidbody.velocity.x);
+			animator.SetFloat("speed", charactere_velocity);
 		}
 		else
 		{
@@ -127,5 +136,16 @@ public class PlayerMovement : MonoBehaviour
 
 		sliding_right = Physics2D.BoxCast(instance_collider.bounds.center, instance_collider.bounds.size, 0, Vector2.right, 0.08f, jumpable_ground);
 		sliding_left = Physics2D.BoxCast(instance_collider.bounds.center, instance_collider.bounds.size, 0, Vector2.left, 0.08f, jumpable_ground);
+	}
+
+	private void Flip(float vel)
+	{
+		if (vel > 0.1f)
+		{
+			sprite_renderer.flipX = false;
+        } else if (vel < -0.1f)
+		{
+			sprite_renderer.flipX = true;
+		}
 	}
 }
