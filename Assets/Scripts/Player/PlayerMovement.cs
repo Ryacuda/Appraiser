@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
 		Movement();
 		Jump();
 		ApplyHook();
-	}
+    }
 
 	private void Movement()
 	{
@@ -80,8 +80,8 @@ public class PlayerMovement : MonoBehaviour
 			instance_rigidbody.velocity = new Vector2(max_speed * horizontal_direction, instance_rigidbody.velocity.y);
 
 			Flip(instance_rigidbody.velocity.x);
-			float charactere_velocity = Mathf.Abs(instance_rigidbody.velocity.x);
-			animator.SetFloat("speed", charactere_velocity);
+			float charactere_velocity_x = Mathf.Abs(instance_rigidbody.velocity.x);
+            animator.SetFloat("x.velocity", charactere_velocity_x);
 		}
 		else
 		{
@@ -93,11 +93,11 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Jump()
 	{
-		if(Time.time - timestamp_jump < jump_input_buffer)
+        if (Time.time - timestamp_jump < jump_input_buffer)
 		{
 			timestamp_jump = -100;  // consume input in order to prevent jumping twice in some cases
-
-			if (jump_charges > 0)
+           
+            if (jump_charges > 0)
 			{
 				instance_rigidbody.velocity = new Vector2(instance_rigidbody.velocity.x, jump_speed);
 				jump_charges--;

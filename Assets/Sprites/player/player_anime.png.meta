@@ -72,19 +72,6 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -127,6 +114,531 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d490ef3877e82804e86ec4012c0f5982
+      internalID: -1713573206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e4cf93972ded21488e6fef8f2252073
+      internalID: 1726601856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e2d50952c9694145938443dffcb3c84
+      internalID: -76105168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b6a3861c38aa5a469b57f42cc1a38e8
+      internalID: -1294856362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 641672d250f83114da05b835085cd833
+      internalID: -1614409670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8481a0cdf0be26e44a6873a5370182c5
+      internalID: -1637803232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac88b4fae5a173b4896f36c31c3e611c
+      internalID: -1098201691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 512a92b98e59c3a4e9cdb9feaecb63d1
+      internalID: 686877077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64af9f77345481546a21151f95996d0f
+      internalID: 1943923162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c612b6d9303f044fac9720a9c405cde
+      internalID: 783116871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0352f42b1af5785469c7030b5f73bda1
+      internalID: -447697798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_11
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb9963299787bb440bfc4f669cd59919
+      internalID: 2123124995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_12
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d92f2eae8fa580340a6cca8f73360b9e
+      internalID: 1373793918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_13
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b13a123f20f6d5f4cb76a6e4de691146
+      internalID: 625519404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_14
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 137009221e26d95438daf61094c61759
+      internalID: 2130153706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_15
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91fbbfd4c7b899f41914baf44f025cc9
+      internalID: -84604912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_16
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa17b0a1b7f79694586bb92415b9a838
+      internalID: -727729080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_17
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c2cab083b4c3444f98aee2e56a9a85a
+      internalID: -1554509915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_18
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1591063e610c30b44891de63d805254f
+      internalID: -850785918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_19
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba16e5a44c10a740a36a552dddf68fd
+      internalID: -529378609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_20
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83993f4a486cdc84eb94bc76f14a5b15
+      internalID: -798493195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_21
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d373bed5c1579d4c9e421df19abc75b
+      internalID: 356959692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_22
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66e107814fdc01e42b8309bac3b2ed0f
+      internalID: 1804509212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_23
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aba8d4f8a0911a4c8168499e5a813ac
+      internalID: 250266398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_24
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6707d74135ce3942977c33986110ee3
+      internalID: 1017096106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_anime_25
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
         width: 48
         height: 48
@@ -137,14 +649,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5307648459712d5478e4a42d07f0498f
-      internalID: -2104386745
+      spriteID: b1e9da1a7e2fd424fa0d22377702015b
+      internalID: 124169212
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_anime_1
+      name: player_anime_26
       rect:
         serializedVersion: 2
         x: 48
@@ -158,14 +670,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c777443234181fb458aa00c0d6d44a0f
-      internalID: 582960995
+      spriteID: bacc9864052b2e745a46b21b890f22f9
+      internalID: -1966660410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_anime_2
+      name: player_anime_27
       rect:
         serializedVersion: 2
         x: 96
@@ -179,14 +691,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7c9599370bda384d8578b3c828414c3
-      internalID: -1355239260
+      spriteID: ba21c7fea5e8f0240994b64b3dddbaeb
+      internalID: 1995975230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_anime_3
+      name: player_anime_28
       rect:
         serializedVersion: 2
         x: 144
@@ -200,14 +712,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 397473630a7d2054c8d93a4dcd1067b5
-      internalID: 1841982567
+      spriteID: 84ef7cf57429e974e9171b1935c28a26
+      internalID: 1474070218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_anime_4
+      name: player_anime_29
       rect:
         serializedVersion: 2
         x: 192
@@ -221,14 +733,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33564e5b2785cdb41b2b1c4de74530c7
-      internalID: 1034674862
+      spriteID: bb2df1e5690bfbe43bc5d9adfc05f384
+      internalID: -1934596127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_anime_5
+      name: player_anime_30
       rect:
         serializedVersion: 2
         x: 240
@@ -242,14 +754,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1e2604f63803ac419ef2d28c6f0da3d
-      internalID: -928690431
+      spriteID: f6f623e2543647148bba5b9e211fb501
+      internalID: -1587719028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_anime_6
+      name: player_anime_31
       rect:
         serializedVersion: 2
         x: 288
@@ -263,14 +775,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8705a60d3c0ad754cbf60098f631c3cb
-      internalID: -2081268952
+      spriteID: 5bad879d01fc649469948cae5b182c76
+      internalID: 643863498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_anime_7
+      name: player_anime_32
       rect:
         serializedVersion: 2
         x: 336
@@ -284,14 +796,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0cfa4cdfbd128ef429351944f7a03b28
-      internalID: -1815368170
+      spriteID: f579c534df8bc5f4fa154f7c9a347179
+      internalID: -1249935860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_anime_8
+      name: player_anime_33
       rect:
         serializedVersion: 2
         x: 384
@@ -305,14 +817,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3500f1b1cb2bb7b4b9eb6ff3d2895d2f
-      internalID: 1226104489
+      spriteID: 445bf21b749e0b648b70c1377baea01b
+      internalID: -1805396268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_anime_9
+      name: player_anime_34
       rect:
         serializedVersion: 2
         x: 432
@@ -326,14 +838,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92d532777548abd45bbdb743022fe522
-      internalID: -1795489533
+      spriteID: 7ce9faa952f504d499524a526e74ced5
+      internalID: -897541035
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_anime_10
+      name: player_anime_35
       rect:
         serializedVersion: 2
         x: 480
@@ -347,14 +859,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 985f0d799d169954f8489be143cd1759
-      internalID: -1642676957
+      spriteID: 8ddd6a022f2f20e44bdb87dd5b804987
+      internalID: 1159291915
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_anime_11
+      name: player_anime_36
       rect:
         serializedVersion: 2
         x: 528
@@ -368,14 +880,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36f497c33260b0542ab112c2585fada6
-      internalID: 2000697851
+      spriteID: 091fb6e995e8b4243b4cbbaccd5729d3
+      internalID: -469502382
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_anime_12
+      name: player_anime_37
       rect:
         serializedVersion: 2
         x: 576
@@ -389,14 +901,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f945bcc9502b8e4faca06513569c87a
-      internalID: 1181422614
+      spriteID: 26750afef5fe7c14bac957e3b177991f
+      internalID: 549552601
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_anime_13
+      name: player_anime_38
       rect:
         serializedVersion: 2
         x: 624
@@ -410,14 +922,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4a7a127cb42256498422b886c73ce17
-      internalID: 894471742
+      spriteID: 5cacf994ee840dc449c52be0b4424822
+      internalID: 795902592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_anime_14
+      name: player_anime_39
       rect:
         serializedVersion: 2
         x: 672
@@ -431,14 +943,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e41710e61b25e4a42b96ae1ece14d0fc
-      internalID: -1557035015
+      spriteID: a589aa10476976345b561cc73005f345
+      internalID: 1871768028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_anime_15
+      name: player_anime_40
       rect:
         serializedVersion: 2
         x: 720
@@ -452,14 +964,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 698022b0c55b92a43b9d946e2cf87bed
-      internalID: -2109036265
+      spriteID: fcc845da8fd85e44a91b2ead12ad675a
+      internalID: 505055680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_anime_16
+      name: player_anime_41
       rect:
         serializedVersion: 2
         x: 768
@@ -473,176 +985,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0b8026e1ccbf1d4d84de79ac535f76f
-      internalID: -221147630
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_anime_17
-      rect:
-        serializedVersion: 2
-        x: 816
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e1f40db8920fd94bb81ce4aafaa8391
-      internalID: 1596193596
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_anime_18
-      rect:
-        serializedVersion: 2
-        x: 864
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87ed427a543d39346aafdec50f17fe03
-      internalID: 649133667
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_anime_19
-      rect:
-        serializedVersion: 2
-        x: 912
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36e3c9a7978720d48ad8914ca66eb54f
-      internalID: 376204188
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_anime_20
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5e1fea2c77c5a34eb03668d770b1a8a
-      internalID: 2045643819
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_anime_21
-      rect:
-        serializedVersion: 2
-        x: 1008
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2667389222cdf0b4bbade5ac1b2bd0d9
-      internalID: 883613270
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_anime_22
-      rect:
-        serializedVersion: 2
-        x: 1056
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1692fd78ee4b58f4184742a46ad23314
-      internalID: 1854672584
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_anime_23
-      rect:
-        serializedVersion: 2
-        x: 1104
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f1056de4e73e44488cea8851656c9ba
-      internalID: 327859364
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_anime_24
-      rect:
-        serializedVersion: 2
-        x: 1152
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 47d87ab9b0023bd4f99a41f9acdf985f
-      internalID: 1068234182
+      spriteID: 9ec5b08e42d35cf43a6316dddd7ac494
+      internalID: 1040885211
       vertices: []
       indices: 
       edges: []
@@ -658,31 +1002,48 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      player_anime_0: -2104386745
-      player_anime_1: 582960995
-      player_anime_10: -1642676957
-      player_anime_11: 2000697851
-      player_anime_12: 1181422614
-      player_anime_13: 894471742
-      player_anime_14: -1557035015
-      player_anime_15: -2109036265
-      player_anime_16: -221147630
-      player_anime_17: 1596193596
-      player_anime_18: 649133667
-      player_anime_19: 376204188
-      player_anime_2: -1355239260
-      player_anime_20: 2045643819
-      player_anime_21: 883613270
-      player_anime_22: 1854672584
-      player_anime_23: 327859364
-      player_anime_24: 1068234182
-      player_anime_3: 1841982567
-      player_anime_4: 1034674862
-      player_anime_5: -928690431
-      player_anime_6: -2081268952
-      player_anime_7: -1815368170
-      player_anime_8: 1226104489
-      player_anime_9: -1795489533
+      player_anime_0: -1713573206
+      player_anime_1: 1726601856
+      player_anime_10: -447697798
+      player_anime_11: 2123124995
+      player_anime_12: 1373793918
+      player_anime_13: 625519404
+      player_anime_14: 2130153706
+      player_anime_15: -84604912
+      player_anime_16: -727729080
+      player_anime_17: -1554509915
+      player_anime_18: -850785918
+      player_anime_19: -529378609
+      player_anime_2: -76105168
+      player_anime_20: -798493195
+      player_anime_21: 356959692
+      player_anime_22: 1804509212
+      player_anime_23: 250266398
+      player_anime_24: 1017096106
+      player_anime_25: 124169212
+      player_anime_26: -1966660410
+      player_anime_27: 1995975230
+      player_anime_28: 1474070218
+      player_anime_29: -1934596127
+      player_anime_3: -1294856362
+      player_anime_30: -1587719028
+      player_anime_31: 643863498
+      player_anime_32: -1249935860
+      player_anime_33: -1805396268
+      player_anime_34: -897541035
+      player_anime_35: 1159291915
+      player_anime_36: -469502382
+      player_anime_37: 549552601
+      player_anime_38: 795902592
+      player_anime_39: 1871768028
+      player_anime_4: -1614409670
+      player_anime_40: 505055680
+      player_anime_41: 1040885211
+      player_anime_5: -1637803232
+      player_anime_6: -1098201691
+      player_anime_7: 686877077
+      player_anime_8: 1943923162
+      player_anime_9: 783116871
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
