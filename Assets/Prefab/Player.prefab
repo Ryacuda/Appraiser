@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8130272680100474977}
   m_Layer: 2
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3523442608020860744}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.585, y: 0.8, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &4034367624656492111
@@ -312,6 +312,7 @@ MonoBehaviour:
   hook_range: 10
   rope_sprite: {fileID: 21300000, guid: d293d9a0625ed554eb658d4fd07340ce, type: 3}
   hook_sprite: {fileID: 21300000, guid: 0126a6d13515afe408dd9d87f725e089, type: 3}
+  anchored: 0
 --- !u!120 &2086036132625928142
 LineRenderer:
   serializedVersion: 2
