@@ -45,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
+		// determines inputs
+
 		horizontal_direction = Input.GetAxisRaw("Horizontal");
 
 		if(Input.GetButtonDown("Jump"))
@@ -66,13 +68,16 @@ public class PlayerMovement : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		// update grounded status
 		UpdateGrounded();
 
+		// call every movement
 		Movement();
 		Jump();
 		ApplyHook();
     }
 
+	// left to right movement
 	private void Movement()
 	{
 		if(grounded)
@@ -91,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
+	// jump (if able to)
 	private void Jump()
 	{
         if (Time.time - timestamp_jump < jump_input_buffer)
@@ -98,20 +104,20 @@ public class PlayerMovement : MonoBehaviour
 			timestamp_jump = -100;  // consume input in order to prevent jumping twice in some cases
            
             if (jump_charges > 0)
-			{
+			{	// regular jump
 				instance_rigidbody.velocity = new Vector2(instance_rigidbody.velocity.x, jump_speed);
 				jump_charges--;
 			}
 			else if (sliding_left && sliding_right)
-			{
+			{	// surrounded by walls
 				instance_rigidbody.velocity = new Vector2(instance_rigidbody.velocity.x, jump_speed);
 			}
 			else if(sliding_right)
-			{
+			{	// right wall -> jump to the left
 				instance_rigidbody.velocity = new Vector2(-max_speed, jump_speed);
 			}
 			else if(sliding_left)
-			{
+			{	// left wall -> jump to the right
 				instance_rigidbody.velocity = new Vector2(max_speed, jump_speed);
 			}
 		}
@@ -128,12 +134,15 @@ public class PlayerMovement : MonoBehaviour
 
 	private void UpdateGrounded()
 	{
+		// checks if there's ground below the player
 		grounded = Physics2D.BoxCast(instance_collider.bounds.center, instance_collider.bounds.size, 0, Vector2.down, 0.08f, jumpable_ground);
+		
 		if(grounded)
 		{
 			jump_charges = 2;
 		}
 
+		// checks left and right of the player for walls
 		sliding_right = Physics2D.BoxCast(instance_collider.bounds.center, instance_collider.bounds.size, 0, Vector2.right, 0.08f, jumpable_ground);
 		sliding_left = Physics2D.BoxCast(instance_collider.bounds.center, instance_collider.bounds.size, 0, Vector2.left, 0.08f, jumpable_ground);
 	}

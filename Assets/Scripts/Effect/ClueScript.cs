@@ -22,6 +22,7 @@ public class ClueScript : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		// gets destroyed on contact
 		if(collision.CompareTag("Player"))
 		{
 			Destroy(gameObject);

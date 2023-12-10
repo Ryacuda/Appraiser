@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -12,7 +13,6 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         coll = GetComponent<BoxCollider2D>();
-        health = 200;
     }
 
     // Update is called once per frame
@@ -25,7 +25,14 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.CompareTag("Traps")) 
         {
+            // lose health
             health -= 10;
+
+            // death
+            if(health <= 0)
+            {
+                SceneManager.LoadScene("Start Menu");
+            }
         }
     }
 }

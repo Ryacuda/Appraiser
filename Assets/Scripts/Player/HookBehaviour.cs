@@ -46,19 +46,20 @@ public class HookBehaviour : MonoBehaviour
         spriterenderer_instance.transform.rotation = Quaternion.Euler(0,0,180*angle / Mathf.PI);
     }
 
+	// Method called to throw the hook toward the desired direction
 	public void ThrowHook(Vector3 playerpos, Vector3 mouseworldpos)
 	{
+		// display the hook
 		linerenderer_instance.enabled = true;
 		spriterenderer_instance.enabled = true;
 
+		// compute the direction
 		hook_throw_direction = mouseworldpos - playerpos;
 
 		hook_throw_direction.Normalize();
 
+		// assess if a hit is registered
 		RaycastHit2D hit = Physics2D.Raycast(playerpos, hook_throw_direction, hook_range);
-
-		Debug.Log(transform.position);
-		Debug.Log(hook_throw_direction);
 
 		Vector3 endpoint;
 		if (hit.collider != null)
@@ -70,9 +71,11 @@ public class HookBehaviour : MonoBehaviour
 			endpoint = playerpos + new Vector3(hook_throw_direction.x, hook_throw_direction.y) * hook_range;
 		}
 
+		// start the hook projectile travel
 		StartCoroutine(HookTravel(playerpos, endpoint, (hit.collider != null)));
 	}
 
+	// moves the hook from a point to another, and whether the hook anchors at the end
 	IEnumerator HookTravel(Vector3 from, Vector3 to, bool anchor_at_the_end)
 	{
 		is_moving = true;
@@ -81,6 +84,7 @@ public class HookBehaviour : MonoBehaviour
 		float next_move = 0;
 		float move_time = Vector3.Distance(from, to) / hook_projectile_speed;
 
+		// linear interpolation
 		while (next_move < move_time)
 		{
 			p = Vector3.Lerp(from, to, next_move / move_time);
@@ -98,12 +102,14 @@ public class HookBehaviour : MonoBehaviour
 		is_moving = false;
 		anchored = anchor_at_the_end;
 
+		// if the hook doesn't anchor, it disappears
 		if(!anchor_at_the_end)
 		{
 			Disable();
 		}
 	}
 
+	// makes the hook disappear
 	public void Disable()
 	{
 		linerenderer_instance.enabled = false;
@@ -111,6 +117,8 @@ public class HookBehaviour : MonoBehaviour
 		anchored = false;
 	}
 
+
+	// the movement that the hook gives to the player
 	public Vector2 GetNewSpeed(Vector2 speed, Vector2 playerpos)
 	{
 		if( Vector2.Distance(playerpos + speed, linerenderer_instance.GetPosition(0)) < Vector2.Distance(linerenderer_instance.GetPosition(0), linerenderer_instance.GetPosition(1)) )
